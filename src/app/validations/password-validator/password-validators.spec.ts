@@ -37,6 +37,16 @@ describe('Password Validators', () => {
 
         comp.contol.setValue("12345678");
         expect(comp.contol.valid).toBeTrue();
+
+        
+        comp.contol.setValue("");
+        expect(comp.contol.valid).toBeFalse();
+
+        comp.contol.setValue("123123123123123123123123123123123123123123123");
+        expect(comp.contol.valid).toBeTrue();
+
+        comp.contol.setValue("#$^@#$*&^@#*&$^@#*$");
+        expect(comp.contol.valid).toBeTrue();
     });
 
     it('minUppers', () => {
